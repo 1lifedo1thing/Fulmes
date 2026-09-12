@@ -1,14 +1,40 @@
-# X Spam Filter
+<p align="center">
+  <img src="examples/fu_er_mo_si.png" width="180" alt="福尔磨撕 X Spam Filter" />
+</p>
 
-按关键词过滤 X (Twitter) 推文下的垃圾回复。
+<h1 align="center">福尔磨撕 X Spam Filter</h1>
 
-**不屏蔽账号、不调用 X 的任何 API、不刷新页面。** 只在你打开的推文详情页里，把命中关键词的回复
-**变透明**（透明度自定义）或**直接隐藏**。
+<p align="center">
+  <strong>按关键词过滤 X（Twitter）推文下的垃圾回复。</strong><br>
+  不屏蔽账号，不调用 X 的任何 API，不刷新页面。命中关键词的回复可以变透明，也可以直接隐藏。
+</p>
+
+<p align="center">
+  <a href="https://chromewebstore.google.com/detail/x-spam-filter/gpfkmempinhlopfkomklkkbdeggaknmo"><img src="https://img.shields.io/chrome-web-store/v/gpfkmempinhlopfkomklkkbdeggaknmo?logo=googlechrome&amp;logoColor=white&amp;label=Chrome%20Web%20Store" alt="Chrome Web Store 版本" /></a>
+  <a href="https://chromewebstore.google.com/detail/x-spam-filter/gpfkmempinhlopfkomklkkbdeggaknmo"><img src="https://img.shields.io/chrome-web-store/users/gpfkmempinhlopfkomklkkbdeggaknmo?label=users" alt="商店用户数" /></a>
+  <a href="https://github.com/ZPVIP/x-spam-filter/stargazers"><img src="https://img.shields.io/github/stars/ZPVIP/x-spam-filter?logo=github" alt="GitHub Stars" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/ZPVIP/x-spam-filter" alt="MIT License" /></a>
+</p>
+
+<p align="center">
+  <a href="https://chromewebstore.google.com/detail/x-spam-filter/gpfkmempinhlopfkomklkkbdeggaknmo"><strong>从 Chrome 应用商店安装</strong></a>
+  ·
+  <a href="#动图演示">动图演示</a>
+  ·
+  <a href="#效果">过滤效果</a>
+  ·
+  <a href="#使用">使用说明</a>
+  ·
+  <a href="CHANGELOG.md">更新日志</a>
+  ·
+  <a href="privacy-policy.md">隐私政策</a>
+</p>
+
+## 我的方案
+
+福尔磨撕只处理你打开的推文详情页中的回复。它在本地匹配关键词，命中后按你的设置让回复变透明或完全隐藏。主推文始终保持原样，关闭扩展后所有回复立即恢复。
 
 ## 安装
-
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/gpfkmempinhlopfkomklkkbdeggaknmo?label=Chrome%20Web%20Store)](https://chromewebstore.google.com/detail/x-spam-filter/gpfkmempinhlopfkomklkkbdeggaknmo)
-
 
 **→ [从 Chrome 应用商店安装](https://chromewebstore.google.com/detail/x-spam-filter/gpfkmempinhlopfkomklkkbdeggaknmo)**
 
@@ -29,7 +55,7 @@ Chrome、Edge、Brave 等 Chromium 内核的浏览器都可以从这里安装。
 
 ### 变透明
 
-垃圾回复还在原位，只是变淡 —— 想看的话还能看清，误伤了也不会漏掉。透明度可调，拉到 100% 就完全看不见。
+垃圾回复还在原位，只是变淡。想看的话还能看清，误伤了也不会漏掉。透明度可调，拉到 100% 就完全看不见。
 
 ![变透明模式](examples/dimmed.png)
 
@@ -64,8 +90,7 @@ Chrome、Edge、Brave 等 Chromium 内核的浏览器都可以从这里安装。
 ## 和 X 自带的「已隐藏的字词」比
 
 X 本来就有关键词屏蔽功能：**设置和隐私 → 隐私和安全 → 隐私和屏蔽 → 已隐藏的字词**。
-思路是一样的，但它只能一条一条手输，没有批量导入，也没法同步别人整理好的词库 ——
-攒到几百条基本不现实。做这个扩展就是为了省掉这份体力活。
+思路是一样的，但它只能一条一条手输，没有批量导入，也没法同步别人整理好的词库，攒到几百条基本不现实。做这个扩展就是为了省掉这份体力活。
 
 | | X 原生「已隐藏的字词」 | 本扩展 |
 | --- | --- | --- |
@@ -147,7 +172,7 @@ X 本来就有关键词屏蔽功能：**设置和隐私 → 隐私和安全 → 
 同步只覆盖对应那一份词库，其余设置和「我的关键词」不受影响；下载内容会校验大小、
 过滤掉 HTML 错误页，失败时原有词库保持不变，并在对应那一栏给出原因。
 
-自动同步只在「一次都没成功同步过」时发生 —— 已经有本地副本后，面板只提示「上次同步：N 天前」，
+自动同步只在「一次都没成功同步过」时发生。已经有本地副本后，面板只提示「上次同步：N 天前」，
 不会悄悄换掉你正在用的那份快照。
 
 ### 白名单（误伤怎么处理）
@@ -156,7 +181,7 @@ X 本来就有关键词屏蔽功能：**设置和隐私 → 隐私和安全 → 
 
 **最快的办法是在页面上直接处理**（默认开启「红色高亮命中的词」）：
 
-1. 命中的那个词在原文里标着红色 —— 正文、昵称、@用户名都会标，命中范围盖住 emoji
+1. 命中的那个词在原文里标着红色，正文、昵称、@用户名都会标，命中范围盖住 emoji
    时给 emoji 描一圈红框；
 2. 鼠标移到红色的词上，弹出一张小卡片，写着命中的规则原文（正则也完整显示）；
 3. 点卡片上的「把「xxx」加入白名单」，这条规则立刻停用，页面上所有因它被拦的回复当场恢复。
@@ -167,15 +192,15 @@ X 本来就有关键词屏蔽功能：**设置和隐私 → 隐私和安全 → 
 也可以回面板里手动来：
 
 1. 展开对应词库的「逐条查看」，把那条词搜出来（搜索会自动跳过上游词里夹的零宽字符）；
-2. 点那一行右边的「白名单」—— 该条立刻变灰划掉，规则停止生效，页面上的效果同步更新；
+2. 点那一行右边的「白名单」，该条立刻变灰划掉，规则停止生效，页面上的效果同步更新；
 3. 想恢复就点同一行的「撤销」，或者直接在「白名单」输入框里删掉那一行。
 
-白名单对**三份来源一律生效**（包括「我的关键词」），普通词按和匹配时相同的方式归一化比对 ——
+白名单对**三份来源一律生效**（包括「我的关键词」），普通词按和匹配时相同的方式归一化比对，
 所以词库里那条塞了零宽字符的 `求主␣人`，你白名单里写干净的「求主人」就能停掉，
 面板上两份词库里的同形条目会一起变灰。写正则要连 `/…/flags` 一起复制，按原文精确匹配。
 
 **注意**：白名单停用的是**规则**，不是豁免整条回复。同一条回复可能同时命中好几条规则，
-停掉一条后另一条仍可能接着拦 —— 继续把那条也加白名单即可。
+停掉一条后另一条仍可能接着拦。继续把那条也加白名单即可。
 
 ### 自定义正则
 
@@ -221,7 +246,7 @@ X 本来就有关键词屏蔽功能：**设置和隐私 → 隐私和安全 → 
    | 1 000 | 71.0 ms | 1.3 ms |
    | 5 000 | 574.1 ms | 3.9 ms |
 
-3. **判定结果缓存在 `WeakMap` 里**，键是 DOM 元素 —— X 的虚拟列表回收节点时缓存自动释放，
+3. **判定结果缓存在 `WeakMap` 里**，键是 DOM 元素。X 的虚拟列表回收节点时缓存自动释放，
    不会像「用 Map/数组存元素引用」那样越滚越占内存。用「正文 + 昵称」签名判断内容有没有变，
    没变直接跳过。
 4. **视觉效果由 `<html>` 上的一个属性 + 一个 CSS 变量驱动。** 拖动透明度滑块、切换模式时，
