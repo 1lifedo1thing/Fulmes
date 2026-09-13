@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="examples/fu_er_mo_si.png" width="180" alt="福尔磨撕 X Spam Filter" />
+  <img src="examples/fu_er_mo_si.png" width="180" alt="福尔磨撕 Fulmes" />
 </p>
 
-<h1 align="center">福尔磨撕 X Spam Filter</h1>
+<h1 align="center">福尔磨撕 Fulmes</h1>
 
 <p align="center">
   <strong>按关键词过滤 X（Twitter）推文下的垃圾回复。</strong><br>
@@ -10,14 +10,16 @@
 </p>
 
 <p align="center">
-  <a href="https://chromewebstore.google.com/detail/x-spam-filter/gpfkmempinhlopfkomklkkbdeggaknmo"><img src="https://img.shields.io/chrome-web-store/v/gpfkmempinhlopfkomklkkbdeggaknmo?logo=googlechrome&amp;logoColor=white&amp;label=Chrome%20Web%20Store" alt="Chrome Web Store 版本" /></a>
-  <a href="https://chromewebstore.google.com/detail/x-spam-filter/gpfkmempinhlopfkomklkkbdeggaknmo"><img src="https://img.shields.io/chrome-web-store/users/gpfkmempinhlopfkomklkkbdeggaknmo?label=users" alt="商店用户数" /></a>
-  <a href="https://github.com/ZPVIP/x-spam-filter/stargazers"><img src="https://img.shields.io/github/stars/ZPVIP/x-spam-filter?logo=github" alt="GitHub Stars" /></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/ZPVIP/x-spam-filter" alt="MIT License" /></a>
+  <a href="https://chromewebstore.google.com/detail/fulmes/gpfkmempinhlopfkomklkkbdeggaknmo"><img src="https://img.shields.io/chrome-web-store/v/gpfkmempinhlopfkomklkkbdeggaknmo?logo=googlechrome&amp;logoColor=white&amp;label=Chrome%20Web%20Store" alt="Chrome Web Store 版本" /></a>
+  <a href="https://chromewebstore.google.com/detail/fulmes/gpfkmempinhlopfkomklkkbdeggaknmo"><img src="https://img.shields.io/chrome-web-store/users/gpfkmempinhlopfkomklkkbdeggaknmo?label=users" alt="商店用户数" /></a>
+  <a href="https://github.com/ZPVIP/Fulmes/stargazers"><img src="https://img.shields.io/github/stars/ZPVIP/Fulmes?logo=github" alt="GitHub Stars" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/ZPVIP/Fulmes" alt="MIT License" /></a>
 </p>
 
 <p align="center">
-  <a href="https://chromewebstore.google.com/detail/x-spam-filter/gpfkmempinhlopfkomklkkbdeggaknmo"><strong>从 Chrome 应用商店安装</strong></a>
+  <a href="https://chromewebstore.google.com/detail/fulmes/gpfkmempinhlopfkomklkkbdeggaknmo"><strong>从 Chrome 应用商店安装</strong></a>
+  ·
+  <a href="#手机安装">手机安装</a>
   ·
   <a href="#动图演示">动图演示</a>
   ·
@@ -36,18 +38,47 @@
 
 ## 安装
 
-**→ [从 Chrome 应用商店安装](https://chromewebstore.google.com/detail/x-spam-filter/gpfkmempinhlopfkomklkkbdeggaknmo)**
+**→ [从 Chrome 应用商店安装](https://chromewebstore.google.com/detail/fulmes/gpfkmempinhlopfkomklkkbdeggaknmo)**
 
 Chrome、Edge、Brave 等 Chromium 内核的浏览器都可以从这里安装。装好即可用：默认开启，
 词库和设置都有默认值，不需要配置。想调整就点浏览器右上角的扩展图标。
 
 想改词库或改代码，见[从源码安装](#从源码安装开发者)；各版本改动见 [CHANGELOG.md](CHANGELOG.md)。
 
+### 手机安装
+
+手机上的 Chrome 和 Safari 不能直接从 Chrome Web Store 安装此扩展。Android 推荐使用 Yandex Browser，iPhone 和 iPad 推荐使用 Orion。安装后请在对应浏览器里打开 `x.com`，Fulmes 不会作用于 X 原生 App。
+
+#### Android：Yandex Browser
+
+Yandex Browser for Android 支持从 Chrome Web Store 安装扩展，要求 Android 9.0 或更高版本。详情见 [Yandex Browser 移动扩展官方说明](https://yandex.com/support/browser-mobile-android-phone/en/personal-settings/extensions)。
+
+1. 从 Google Play 安装 [Yandex Browser](https://play.google.com/store/apps/details?id=com.yandex.browser)，并升级到最新版本。
+2. 在 Yandex Browser 中打开 [Fulmes 的 Chrome Web Store 页面](https://chromewebstore.google.com/detail/fulmes/gpfkmempinhlopfkomklkkbdeggaknmo)。不要从 Chrome App 打开这个链接。
+3. 点 **Add to Chrome**，再点 **Add extension** 确认。按钮文字可能随浏览器语言变化。
+4. 打开 `https://x.com/`，进入任意推文详情页。Fulmes 只过滤详情页里的回复。
+5. 要修改过滤设置，在 Yandex Browser 菜单中点 **Extensions**，再点 **Fulmes**。
+
+如果商店页面没有安装按钮，在 Yandex Browser 菜单中依次点 **Extensions** 和 **More extensions**，然后重新打开 Fulmes 的商店页面。安装后也可以打开 `browser://extensions`，确认 Fulmes 已启用。
+
+#### iPhone 和 iPad：Orion
+
+Orion 可以从 Chrome Web Store 安装扩展，但 iOS 和 iPadOS 上的扩展支持仍处于 beta 阶段。部分 Chrome 扩展 API 可能无法工作，详情见 [Orion 的 iOS 扩展官方说明](https://help.kagi.com/orion/browser-extensions/ios-ipados-extensions.html)。
+
+1. 从 App Store 安装 [Orion Browser by Kagi](https://apps.apple.com/app/orion-browser-by-kagi/id1484498200)。
+2. 打开 Orion。iPhone 点右下角的 **•••**，iPad 点右上角的 **•••**。
+3. 点 **Settings**，找到 **Extensions**，然后开启 Chrome 扩展支持。
+4. 返回 Orion，在地址栏打开 [Fulmes 的 Chrome Web Store 页面](https://chromewebstore.google.com/detail/fulmes/gpfkmempinhlopfkomklkkbdeggaknmo)。
+5. 点商店页面上的安装按钮，并在 Orion 中确认安装。
+6. 打开 `https://x.com/`，进入一条推文的详情页。要打开 Fulmes 设置，点 **•••**，再点 **Extensions** 和 **Fulmes**。
+
+如果 Fulmes 在 Orion 中无法过滤、无法打开设置或无法同步词库，请先在 **••• > Extensions** 中确认它已启用。Orion 官方说明并非所有 Chrome 扩展都能在 iOS 和 iPadOS 上完整运行，因此桌面 Chrome 和 Android Yandex Browser 仍是兼容性更稳的选择。
+
 ## 动图演示
 
 从商店点「添加扩展」，到打开一条推文、在设置面板里切换「变透明 / 隐藏」、拖动透明度滑块, 免配置可用。
 
-![X Spam Filter 演示：从商店安装，到过滤推文回复、切换变透明与隐藏模式](examples/x-spam-filter.gif)
+![Fulmes 演示：从商店安装，到过滤推文回复、切换变透明与隐藏模式](examples/fulmes.gif)
 
 ## 效果
 
@@ -127,7 +158,7 @@ X 本来就有关键词屏蔽功能：**设置和隐私 → 隐私和安全 → 
 
 | 1 | 2 |
 | --- | --- |
-| ![设置面板上半部分：总开关、命中后的处理方式、我的关键词、内置词库](examples/Screenshot_1.png) | ![设置面板下半部分：社区词库、白名单、匹配选项、恢复默认设置](examples/Screenshot_2.png) |
+| ![设置面板上半部分：总开关、命中后的处理方式、我的关键词、内置词库](examples/Screenshot_1-fulmes.png) | ![设置面板下半部分：社区词库、白名单、匹配选项、恢复默认设置](examples/Screenshot_2.png) |
 
 | 设置 | 说明 |
 | --- | --- |
@@ -154,7 +185,7 @@ X 本来就有关键词屏蔽功能：**设置和隐私 → 隐私和安全 → 
 
 | 名单 | 谁维护 | 能不能改 | 来源 | 恢复默认设置时 |
 | --- | --- | --- | --- | --- |
-| 内置词库 | 本项目 | 只读 | 扩展包里的 `keywords.txt`，可同步 [ZPVIP/x-spam-filter](https://github.com/ZPVIP/x-spam-filter) | 还原成扩展包里的出厂词库 |
+| 内置词库 | 本项目 | 只读 | 扩展包里的 `keywords.txt`，可同步 [ZPVIP/Fulmes](https://github.com/ZPVIP/Fulmes) | 还原成扩展包里的出厂词库 |
 | 社区词库 | 社区 | 只读 | 联网同步 [amahteru/x-comment-blocker](https://github.com/amahteru/x-comment-blocker) | 清空并重新联网获取 |
 | 我的关键词 | 你 | 随意 | 自己手写 | **原样保留** |
 | 白名单 | 你 | 随意 | 点按钮加，或者自己手写 | **原样保留** |
@@ -223,7 +254,7 @@ X 本来就有关键词屏蔽功能：**设置和隐私 → 隐私和安全 → 
 1. clone 或下载本仓库
 2. Chrome 打开 `chrome://extensions/`
 3. 右上角打开「开发者模式」
-4. 点「加载已解压的扩展程序」，选择 `x-spam-filter/` 目录
+4. 点「加载已解压的扩展程序」，选择 `Fulmes/` 目录
 
 出厂词库就是根目录的 `keywords.txt`，每行一条，改完重新加载扩展即可生效，不用改 JavaScript。
 

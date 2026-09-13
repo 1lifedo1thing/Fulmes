@@ -1,5 +1,5 @@
 /**
- * X Spam Filter —— content script
+ * Fulmes content script
  *
  * 设计要点（也是和「轮询 + 逐词正则」类插件的主要区别）：
  *
@@ -220,7 +220,7 @@
   }
 
   /**
-   * 主楼（用户点进来的那条推文）不参与过滤 —— 只过滤回复。
+   * 主楼（用户点进来的那条推文）不参与过滤，只过滤回复。
    * 主楼里的时间戳 / 互动数链接都指向当前 URL 的 status id；
    * 兜底再认一次「页面上第一条 article」。
    */
@@ -261,7 +261,7 @@
    *
    * 匹配是在归一化后的文本上做的（小写、去掉空白与零宽字符），而 DOM 里是原文，
    * 两边的下标对不上。所以这里不去做下标映射，而是反过来用关键词造一个「宽松正则」：
-   * 每个字之间允许夹任意空白/零宽字符，直接拿它去原文里找 —— 「求主␣人」「同 城」
+   * 每个字之间允许夹任意空白/零宽字符，直接拿它去原文里找，「求主␣人」「同 城」
    * 这类拆字写法照样能定位到。
    */
   function looseRegex(hit) {
@@ -295,7 +295,7 @@
    * 把一棵子树摊平成「和 readText 完全一致的字符串」+ 每段字符对应的 DOM 位置。
    *
    * 必须摊平了再找，不能逐个文本节点找：X 会把一条正文切成好几个 span，
-   * emoji 是 <img alt="🍒">，命中的又可能是 /^…$/ 这种只在整段文本上成立的正则 ——
+   * emoji 是 <img alt="🍒">，命中的又可能是 /^…$/ 这种只在整段文本上成立的正则，
    * 逐节点找的话这些一个都定位不到。
    */
   function flatten(el) {
@@ -451,7 +451,7 @@
     }
   }
 
-  /** 只高亮正文、昵称和 @用户名 —— 也就是参与匹配的那几处。 */
+  /** 只高亮正文、昵称和 @用户名，也就是参与匹配的那几处。 */
   function applyHighlight(article, hit) {
     unhighlight(article);
     if (!hit || cfg.highlightHit === false) return;
@@ -582,7 +582,7 @@
   function onMutations(records) {
     if (!active || !cfg.enabled) return;
 
-    // X 有时会一次性重排一大片 DOM，逐条 closest() 反而更贵 —— 直接全量扫。
+    // X 有时会一次性重排一大片 DOM，逐条 closest() 反而更贵，直接全量扫。
     if (records.length > MUTATION_BURST) {
       fullScan();
       return;
@@ -642,7 +642,7 @@
     hint.textContent = "加进白名单后这条规则不再生效，其它词照旧";
 
     el.append(title, kw, btn, hint);
-    // 挂在 body 上而不是回复里 —— 回复整条是半透明的，卡片放进去就跟着淡掉了
+    // 挂在 body 上而不是回复里，回复整条是半透明的，卡片放进去就跟着淡掉了
     document.body.appendChild(el);
 
     btn.addEventListener("click", whitelistCurrent);
@@ -799,7 +799,7 @@
   }
 
   /**
-   * SPA 换页。注意：绝不 location.reload() —— X 一旦刷新，浏览器后退按钮
+   * SPA 换页。注意：绝不 location.reload()，X 一旦刷新，浏览器后退按钮
    * 就回不到之前的时间线位置了。这里只是重新判定 + 重扫。
    */
   function onUrlChange() {
@@ -869,10 +869,10 @@
       if (matchingChanged(prev, cfg)) {
         refresh({ rebuild: true });
       } else if (prev.highlightHit !== cfg.highlightHit) {
-        // 高亮是插在 DOM 里的 <mark>，开关它得重新过一遍页面 —— 但词库不用重编
+        // 高亮是插在 DOM 里的 <mark>，开关它得重新过一遍页面，但词库不用重编
         refresh();
       } else {
-        // 只是换了显示方式 / 拖了透明度滑块 —— 改一个属性就够了，不重新扫描
+        // 只是换了显示方式 / 拖了透明度滑块，改一个属性就够了，不重新扫描
         applyStyleVars();
       }
     });

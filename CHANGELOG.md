@@ -2,6 +2,14 @@
 
 本项目遵循[语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.4.0] - 2026-09-13
+
+### Changed
+
+- Renamed the extension to `福尔磨撕 Fulmes`.
+- Added a new minimalist detective icon.
+- Updated the built-in keyword source to the renamed `ZPVIP/Fulmes` repository.
+
 ## [1.3.0] - 2026-08-14
 
 ### 新增
@@ -39,7 +47,7 @@
 ### 改进
 
 - 内置 `keywords.txt` 与社区词库去重：删掉 74 行重复内容，只留上游没有的 183 条。
-  两条上游被塞了零宽字符的词（`求主␣人`、`主⁠人␣快来`）保留了干净版本 ——
+  两条上游被塞了零宽字符的词（`求主␣人`、`主⁠人␣快来`）保留了干净版本，
   关掉「忽略隐藏字符」时上游那两条形同废词。
 - 词库列表懒渲染，只在展开「逐条查看」时才建 DOM，七百多条不拖慢弹窗打开速度。
 

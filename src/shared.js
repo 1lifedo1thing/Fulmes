@@ -1,5 +1,5 @@
 /**
- * 共享常量 —— 同时被 content script / service worker / popup 引用。
+ * 共享常量，同时被 content script / service worker / popup 引用。
  *
  * 三处运行环境不同（隔离世界 / worker / 扩展页面），所以统一挂到 globalThis，
  * 而不是依赖脚本间的词法作用域共享。
@@ -68,7 +68,7 @@ globalThis.XSF_asRegex = function (keyword) {
 /**
  * 普通关键词与正文的归一化。
  *
- * content script 拿它判定命中，设置面板拿它判断某条词是否已在白名单里 ——
+ * content script 拿它判定命中，设置面板拿它判断某条词是否已在白名单里，
  * 必须是同一套规则，否则面板上显示「已白名单」而实际还在拦，用户会疯。
  */
 globalThis.XSF_normalizeKeyword = function (text, config) {
@@ -157,12 +157,12 @@ globalThis.XSF_loadBuiltinKeywords = function () {
  *  - community：上游开源项目 x-comment-blocker 的词库，只能联网取。
  *
  * 两份都按「只读快照」对待：各自单独开关、单独同步，匹配时合并去重。
- * 想去掉其中某条词，用白名单，不要改快照 —— 下次同步会覆盖掉。
+ * 想去掉其中某条词，用白名单，不要改快照，下次同步会覆盖掉。
  */
 globalThis.XSF_KEYWORD_SOURCES = {
   builtin: {
     label: "内置词库",
-    url: "https://raw.githubusercontent.com/ZPVIP/x-spam-filter/main/keywords.txt"
+    url: "https://raw.githubusercontent.com/ZPVIP/Fulmes/main/keywords.txt"
   },
   community: {
     label: "社区词库",

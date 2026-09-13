@@ -1,11 +1,11 @@
 /**
- * X Spam Filter —— popup
+ * Fulmes popup
  *
  * 配置整份存在 storage.local 的 "config" key 下；content script 通过
  * storage.onChanged 实时收到变更，页面立刻生效，不需要刷新。
  *
  * 两份词库在这里是**只读**的：同步会整份替换，改了也保不住。
- * 误伤靠「白名单」减词 —— 每一行右边一个按钮，点一下就把那条规则停掉。
+ * 误伤靠「白名单」减词，每一行右边一个按钮，点一下就把那条规则停掉。
  */
 (() => {
   "use strict";
@@ -372,7 +372,7 @@
 
   /**
    * 恢复出厂设置：两份词库都回到上游原样（社区词库清空后立刻重新拉一次），
-   * 但「我的关键词」和「白名单」原样保留 —— 那两份是用户自己的东西。
+   * 但「我的关键词」和「白名单」原样保留，那两份是用户自己的东西。
    */
   function doReset() {
     const keepUser = parseKeywords(el.userKeywords.value);

@@ -1,5 +1,5 @@
 /**
- * X Spam Filter —— service worker
+ * Fulmes service worker
  *
  * 只做三件事：首次安装写入默认配置、首次安装拉一次社区词库、
  * 把 content script 报上来的过滤条数显示在图标徽标上。
@@ -9,7 +9,7 @@ importScripts(chrome.runtime.getURL("src/shared.js"));
 
 /**
  * 社区词库不在扩展包里，装好后先取一次，用户不打开设置面板也能用上。
- * 失败不重试也不报错 —— 设置面板里还有手动同步按钮。
+ * 失败不重试也不报错，设置面板里还有手动同步按钮。
  */
 async function primeCommunityKeywords() {
   try {
