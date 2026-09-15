@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "福尔磨撕 Fulmes",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "按关键词过滤 X (Twitter) 推文下的垃圾回复：可选整条变透明或直接隐藏，不屏蔽账号、不刷新页面。",
   "permissions": [
     "storage"

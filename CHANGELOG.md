@@ -2,6 +2,14 @@
 
 本项目遵循[语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.4.1] - 2026-09-15
+
+### Changed
+
+- Replaced History API method overrides with Navigation API events and a `popstate` fallback.
+- Replaced the detective artwork and extension icons with an original Chinese New Year child mascot.
+- Added an English README and moved the Chinese documentation to `README-CN.md`.
+
 ## [1.4.0] - 2026-09-13
 
 ### Changed
