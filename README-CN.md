@@ -1,0 +1,286 @@
+<p align="center">
+  <img src="examples/fulmes-mascot-new-year-v4-rounded.png" width="180" alt="福尔磨撕 Fulmes" />
+</p>
+
+<h1 align="center">福尔磨撕 Fulmes</h1>
+
+<p align="center">
+  <a href="README.md">English</a> | 中文
+</p>
+
+<p align="center">
+  <strong>按关键词过滤 X（Twitter）推文下的垃圾回复。</strong><br>
+  不自动操作账号，不向 X 发起额外网络请求，不刷新页面。命中关键词的回复可以变透明，也可以直接隐藏。
+</p>
+
+<p align="center">
+  <a href="https://chromewebstore.google.com/detail/fulmes/gpfkmempinhlopfkomklkkbdeggaknmo"><img src="https://img.shields.io/chrome-web-store/v/gpfkmempinhlopfkomklkkbdeggaknmo?logo=googlechrome&amp;logoColor=white&amp;label=Chrome%20Web%20Store" alt="Chrome Web Store 版本" /></a>
+  <a href="https://chromewebstore.google.com/detail/fulmes/gpfkmempinhlopfkomklkkbdeggaknmo"><img src="https://img.shields.io/chrome-web-store/users/gpfkmempinhlopfkomklkkbdeggaknmo?label=users" alt="商店用户数" /></a>
+  <a href="https://github.com/ZPVIP/Fulmes/stargazers"><img src="https://img.shields.io/github/stars/ZPVIP/Fulmes?logo=github" alt="GitHub Stars" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/ZPVIP/Fulmes" alt="MIT License" /></a>
+</p>
+
+<p align="center">
+  <a href="https://chromewebstore.google.com/detail/fulmes/gpfkmempinhlopfkomklkkbdeggaknmo">从 Chrome 应用商店安装</a>
+  ·
+  <a href="#手机安装">手机安装</a>
+  ·
+  <a href="#动图演示">动图演示</a>
+  ·
+  <a href="#效果">过滤效果</a>
+  ·
+  <a href="#使用">使用说明</a>
+  ·
+  <a href="CHANGELOG.md">更新日志</a>
+  ·
+  <a href="privacy-policy.md">隐私政策</a>
+</p>
+
+## 工作方式与安全边界
+
+Fulmes 在桌面端和移动端均可使用。桌面端支持 Chrome、Edge、Brave 等 Chromium 浏览器；移动端支持能够安装 Chrome 扩展的浏览器，包括 Android 上的 Yandex Browser，以及 iPhone 和 iPad 上的 Orion。具体安装方式和兼容性说明见下文。
+
+Fulmes 只处理你主动打开的推文详情页中的回复。扩展在浏览器本地读取 X 已经渲染的文字、昵称和用户名，并与本地关键词规则匹配。命中的回复可以变透明或完全隐藏，主推文始终保持原样。关闭扩展后，所有回复立即恢复。
+
+Fulmes 将账号安全作为明确的设计边界。它不发帖、不回复、不点赞、不转发、不关注、不取关、不屏蔽、不静音、不举报，也不通过 X 隐藏回复或修改账号数据。扩展不读取 cookie、认证 token 或浏览记录，不调用 X API 或内部 GraphQL，也不会向 X 发起额外网络请求。帖子内容和账号信息不会被收集、保存或上传。
+
+这些边界让 Fulmes 与自动发帖、批量互动、自动屏蔽和 browser bot 明确区分开来。Fulmes 不执行 [X 自动化规则](https://help.x.com/en/rules-and-policies/x-automation)中列出的账号自动化操作。
+
+## 安装
+
+**→ [从 Chrome 应用商店安装](https://chromewebstore.google.com/detail/fulmes/gpfkmempinhlopfkomklkkbdeggaknmo)**
+
+Chrome、Edge、Brave 等 Chromium 内核的浏览器都可以从这里安装。装好即可用：默认开启，词库和设置都有默认值，不需要配置。想调整就点浏览器右上角的扩展图标。
+
+想改词库或改代码，见[从源码安装](#从源码安装开发者)；各版本改动见 [CHANGELOG.md](CHANGELOG.md)。
+
+### 手机安装
+
+手机上的 Chrome 和 Safari 不能直接从 Chrome Web Store 安装此扩展。Android 推荐使用 Yandex Browser，iPhone 和 iPad 推荐使用 Orion。安装后请在对应浏览器里打开 `x.com`，Fulmes 不会作用于 X 原生 App。
+
+#### Android：Yandex Browser
+
+Yandex Browser for Android 支持从 Chrome Web Store 安装扩展，要求 Android 9.0 或更高版本。详情见 [Yandex Browser 移动扩展官方说明](https://yandex.com/support/browser-mobile-android-phone/en/personal-settings/extensions)。
+
+1. 从 Google Play 安装 [Yandex Browser](https://play.google.com/store/apps/details?id=com.yandex.browser)，并升级到最新版本。
+2. 在 Yandex Browser 中打开 [Fulmes 的 Chrome Web Store 页面](https://chromewebstore.google.com/detail/fulmes/gpfkmempinhlopfkomklkkbdeggaknmo)。不要从 Chrome App 打开这个链接。
+3. 点 **Add to Chrome**，再点 **Add extension** 确认。按钮文字可能随浏览器语言变化。
+4. 打开 `https://x.com/`，进入任意推文详情页。Fulmes 只过滤详情页里的回复。
+5. 要修改过滤设置，在 Yandex Browser 菜单中点 **Extensions**，再点 **Fulmes**。
+
+如果商店页面没有安装按钮，在 Yandex Browser 菜单中依次点 **Extensions** 和 **More extensions**，然后重新打开 Fulmes 的商店页面。安装后也可以打开 `browser://extensions`，确认 Fulmes 已启用。
+
+#### iPhone 和 iPad：Orion
+
+Orion 可以从 Chrome Web Store 安装扩展，但 iOS 和 iPadOS 上的扩展支持仍处于 beta 阶段。部分 Chrome 扩展 API 可能无法工作，详情见 [Orion 的 iOS 扩展官方说明](https://help.kagi.com/orion/browser-extensions/ios-ipados-extensions.html)。
+
+1. 从 App Store 安装 [Orion Browser by Kagi](https://apps.apple.com/app/orion-browser-by-kagi/id1484498200)。
+2. 打开 Orion。iPhone 点右下角的 **•••**，iPad 点右上角的 **•••**。
+3. 点 **Settings**，找到 **Extensions**，然后开启 Chrome 扩展支持。
+4. 返回 Orion，在地址栏打开 [Fulmes 的 Chrome Web Store 页面](https://chromewebstore.google.com/detail/fulmes/gpfkmempinhlopfkomklkkbdeggaknmo)。
+5. 点商店页面上的安装按钮，并在 Orion 中确认安装。
+6. 打开 `https://x.com/`，进入一条推文的详情页。要打开 Fulmes 设置，点 **•••**，再点 **Extensions** 和 **Fulmes**。
+
+如果 Fulmes 在 Orion 中无法过滤、无法打开设置或无法同步词库，请先在 **••• > Extensions** 中确认它已启用。Orion 官方说明并非所有 Chrome 扩展都能在 iOS 和 iPadOS 上完整运行，因此桌面 Chrome 和 Android Yandex Browser 仍是兼容性更稳的选择。
+
+## 动图演示
+
+从商店点「添加扩展」，到打开一条推文、在设置面板里切换「变透明 / 隐藏」、拖动透明度滑块, 免配置可用。
+
+![Fulmes 演示：从商店安装，到过滤推文回复、切换变透明与隐藏模式](examples/fulmes.gif)
+
+## 效果
+
+同一条推文的评论区，两种模式的对比。
+
+### 变透明
+
+垃圾回复还在原位，只是变淡。想看的话还能看清，误伤了也不会漏掉。透明度可调，拉到 100% 就完全看不见。
+
+![变透明模式](examples/dimmed.png)
+
+### 隐藏
+
+整条回复直接消失，评论区只剩下真人的讨论。
+
+![隐藏模式](examples/hidden.png)
+
+## 特点
+
+- **只做视觉过滤**：不 block、不 mute、不读取 cookie，也不会由扩展向 X 发起额外网络请求。取消勾选就完全恢复原样。（为什么不拉黑账号：见[下文](#为什么不拉黑账号)）
+- **两种效果，二选一**
+  - **变透明**：0% = 和原来一样，100% = 完全看不见（此时同时关闭鼠标交互，避免误点）。
+  - **隐藏**：整条回复 `display: none`，就像不存在。
+- **只过滤回复**：你点进来的那条主推文永远不会被处理。
+- **滚动加载自动生效**：靠 MutationObserver 增量处理新插入的回复，不轮询回复 DOM，也不反复扫描未变化的页面。
+- **绝不刷新页面**：X 一旦 reload，浏览器后退按钮就回不到之前的时间线位置了，所以全程只做 DOM 标记，连 SPA 换页也只是重新判定。
+- **两份词库，分别开关**：自己维护的**内置词库**＋社区维护的 [x-comment-blocker](https://github.com/amahteru/x-comment-blocker) **社区词库**，两份已去重、互不重叠，实际条数在设置面板里各自显示。
+- **看得见过滤原因**：命中的词就在原文里红色高亮（正文、昵称、@用户名都标），鼠标放上去还能一键把这条规则加进白名单，不用回面板里翻（可关）。
+- **误伤靠白名单，不靠改词库**：两份词库都是只读快照（同步时整份替换），面板里逐条列出，哪条误伤就点它右边的「白名单」把那条规则停掉。白名单是你自己的，同步和「恢复默认设置」都不会动。
+- **词库可扩展且不掉速**：普通关键词与 `/正则/flags` 混排，词库涨到上万条，单条回复的匹配次数依然是常数级。
+- **省掉一条条手输的功夫**：X 自己也有关键词屏蔽，但只能一个词一个词地加；这边装好就是几百条现成规则，还能同步更新（[详细对比](#和-x-自带的已隐藏的字词比)）。
+
+## 和 X 自带的「已隐藏的字词」比
+
+X 本来就有关键词屏蔽功能：**设置和隐私 → 隐私和安全 → 隐私和屏蔽 → 已隐藏的字词**。思路是一样的，但它只能一条一条手输，没有批量导入，也没法同步别人整理好的词库，攒到几百条基本不现实。做这个扩展就是为了省掉这份体力活。
+
+| | X 原生「已隐藏的字词」 | 本扩展 |
+| --- | --- | --- |
+| 添加方式 | 一条一条手输 | 装好就有几百条现成规则 |
+| 保持更新 | 全靠自己想起来加 | 一键同步，社区词库跟着上游走 |
+| 正则 | 不支持 | 支持 `/…/flags` |
+| 拆字规避（`同 城 约`、零宽字符） | 匹配不到 | 匹配前先归一化，能识别 |
+| 误伤了 | 回设置里翻出那条删掉 | 面板里点一下「白名单」，页面立刻更新 |
+| 命中后 | 直接看不到 | 变淡或隐藏，自己选 |
+| 设置存在哪 | 账号级设置，存在 X 那边 | 只存在本地，关掉开关就完全恢复 |
+| 作用范围 | 首页时间线、通知等 | 只作用于你点开的推文详情页的回复 |
+
+两者不冲突，可以一起用：原生那份留给你最在意的几个词，剩下的批量脏活交给扩展。
+
+## 为什么不拉黑账号
+
+同类扩展有「自动拉黑」功能，需要给屏蔽词逐词打开，默认不开，命中的作者会被自动拉黑。本扩展没做这件事，原因有两个。
+
+一是，批量拉黑在数量上就做不完。公开维护的 [Botblock 账号名单](https://github.com/dansarie/Botblock) 已经收录了 8 万多个账号。即使每分钟拉黑一个账号，每天连续操作 4 小时，一天也只能处理 240 个。拉完这份名单至少需要 334 天，几乎整整一年，而且一天都不能停。
+
+这 8 万多个账号还是几年前积累下来的旧名单。其中不少账号可能已经停用、被封禁或改名，花时间逐个操作，很可能只是在处理已经失效的记录。与此同时，新的垃圾账号还在不断注册。旧名单没有拉完，新账号已经补进来。靠逐个拉黑追不上账号产生的速度，也不可能把垃圾回复清理干净。
+
+关键词过滤处理的是垃圾内容的共性。几十上百个账号经常反复使用同一批词。加一条关键词，可以一次挡住整类账号，也能覆盖以后出现的新账号。拉黑一个账号，只能让这一个账号安静。
+
+二是有账号风险。拉黑要读 cookie 里的 CSRF token，再用它调 X 的内部接口操作你的账号。批量、按固定节奏地拉黑一串陌生账号，这种行为本身就很接近机器人，容易被风控注意到。它改的还是账号的持久状态，拉错了要手动一个个解除。
+
+关键词过滤最多让你少看到一条回复。不读 cookie，也不会由扩展向 X 发起额外网络请求，关掉开关就恢复原样。真要拉黑某个号，X 自带的按钮一直都在。
+
+## 使用
+
+点扩展图标打开设置面板：
+
+| 1 | 2 |
+| --- | --- |
+| ![设置面板上半部分：总开关、命中后的处理方式、我的关键词、内置词库](examples/Screenshot_1-fulmes.png) | ![设置面板下半部分：社区词库、白名单、匹配选项、恢复默认设置](examples/Screenshot_2.png) |
+
+| 设置 | 说明 |
+| --- | --- |
+| 总开关 | 关掉后所有回复立刻恢复正常显示 |
+| 变透明 / 隐藏 | 命中后的处理方式，二选一 |
+| 透明度 | 仅「变透明」模式有效，0–100% |
+| 我的关键词 | 每行一个；用 `/…/flags` 表示正则 |
+| 内置词库 | 本扩展自带的那份，关掉后只用剩下的来源 |
+| 社区词库 | x-comment-blocker 那份，关掉后只用剩下的来源 |
+| 同步 | 从对应仓库下载最新版 `keywords.txt`，校验去重后替换本地副本 |
+| 逐条查看 | 只读列出这份词库，带搜索框；每行右边一个「白名单」按钮 |
+| 白名单 | 列在这里的规则一律不生效，可以点按钮加、也可以自己手写 |
+| 红色高亮命中的词 | 把命中的那条词在原文里标红（正文、昵称、@用户名），鼠标移上去可一键加白名单；仅「变透明」模式有效 |
+| 同时匹配昵称和 @用户名 | 正文干净但昵称是广告的账号也能拦 |
+| 忽略空格与隐藏字符 | 识别「同 城​约 炮」这类拆字规避 |
+| 普通关键词区分大小写 | 只影响普通关键词；正则由自己的 flags 控制 |
+
+改动即时生效，页面不会刷新。扩展图标上的徽标显示当前页过滤掉了多少条。
+
+### 四份名单的关系
+
+前三份是「加词」，第四份是「减词」：命中任意一份词库里的任意一条就算垃圾回复，除非那一条被白名单停掉了。
+
+| 名单 | 谁维护 | 能不能改 | 来源 | 恢复默认设置时 |
+| --- | --- | --- | --- | --- |
+| 内置词库 | 本项目 | 只读 | 扩展包里的 `keywords.txt`，可同步 [ZPVIP/Fulmes](https://github.com/ZPVIP/Fulmes) | 还原成扩展包里的出厂词库 |
+| 社区词库 | 社区 | 只读 | 联网同步 [amahteru/x-comment-blocker](https://github.com/amahteru/x-comment-blocker) | 清空并重新联网获取 |
+| 我的关键词 | 你 | 随意 | 自己手写 | **原样保留** |
+| 白名单 | 你 | 随意 | 点按钮加，或者自己手写 | **原样保留** |
+
+点「恢复默认设置」会先弹确认框，说明清楚会改什么、不会改什么，可以取消（或按 Esc / 点遮罩）。
+
+**内置词库**没同步过时存的是 `null` 而不是一份拷贝，所以以后插件更新词库，你能自动拿到新词。出厂词库集中保存在根目录的 `keywords.txt`，每行一条，维护者只需要编辑这个文件并重新加载扩展，不必改 JavaScript。
+
+**社区词库**不随扩展打包（上游随时在更新，打包进来只会带来一份过期副本），所以安装后由 service worker 自动取一次；万一没取到，打开设置面板时会自动补一次，面板上也随时能手动同步。它和内置词库**已经去过重**：`keywords.txt` 里只留了上游没有的词。
+
+同步只覆盖对应那一份词库，其余设置和「我的关键词」不受影响；下载内容会校验大小、过滤掉 HTML 错误页，失败时原有词库保持不变，并在对应那一栏给出原因。
+
+自动同步只在「一次都没成功同步过」时发生。已经有本地副本后，面板只提示「上次同步：N 天前」，不会悄悄换掉你正在用的那份快照。
+
+### 白名单（误伤怎么处理）
+
+两份词库都是只读的：在本地删掉一行，下次同步就又回来了。所以「误伤」走白名单：
+
+**最快的办法是在页面上直接处理**（默认开启「红色高亮命中的词」）：
+
+1. 命中的那个词在原文里标着红色，正文、昵称、@用户名都会标，命中范围盖住 emoji 时给 emoji 描一圈红框；
+2. 鼠标移到红色的词上，弹出一张小卡片，写着命中的规则原文（正则也完整显示）；
+3. 点卡片上的「把「xxx」加入白名单」，这条规则立刻停用，页面上所有因它被拦的回复当场恢复。
+
+注意红色高亮也在变淡的那条回复里，所以透明度拉得越高，红色越不明显。经常要排查误伤的话，把透明度调到 40% 左右最好用：垃圾回复已经很不起眼，红字还看得清。
+
+也可以回面板里手动来：
+
+1. 展开对应词库的「逐条查看」，把那条词搜出来（搜索会自动跳过上游词里夹的零宽字符）；
+2. 点那一行右边的「白名单」，该条立刻变灰划掉，规则停止生效，页面上的效果同步更新；
+3. 想恢复就点同一行的「撤销」，或者直接在「白名单」输入框里删掉那一行。
+
+白名单对**三份来源一律生效**（包括「我的关键词」），普通词按和匹配时相同的方式归一化比对，所以词库里那条塞了零宽字符的 `求主␣人`，你白名单里写干净的「求主人」就能停掉，面板上两份词库里的同形条目会一起变灰。写正则要连 `/…/flags` 一起复制，按原文精确匹配。
+
+**注意**：白名单停用的是**规则**，不是豁免整条回复。同一条回复可能同时命中好几条规则，停掉一条后另一条仍可能接着拦。继续把那条也加白名单即可。
+
+### 自定义正则
+
+正则匹配保留原文的空格、换行和大小写，仅移除常见零宽与方向控制字符。是否忽略大小写由 `i` flag 决定，不受「普通关键词区分大小写」设置影响。例如：
+
+```
+/^\d{6,}$/          纯数字回复
+/(微信|薇信)\s*[:：]/  各种「微信：」变体
+/t\.me\//           Telegram 邀请链接
+```
+
+写错的正则会被忽略并在控制台提示，不影响其它关键词。为避免 `RegExp.lastIndex` 造成间歇性漏判，`g` 和 `y` flag 会自动移除。
+
+## 从源码安装（开发者）
+
+要改词库、改代码或者跑最新的未发布版本，直接加载源码目录：
+
+1. clone 或下载本仓库
+2. Chrome 打开 `chrome://extensions/`
+3. 右上角打开「开发者模式」
+4. 点「加载已解压的扩展程序」，选择 `Fulmes/` 目录
+
+出厂词库就是根目录的 `keywords.txt`，每行一条，改完重新加载扩展即可生效，不用改 JavaScript。
+
+源码版和商店版是两个独立的扩展（ID 不同），设置和词库各存一份、互不相通。两个同时装着会各跑一遍过滤，建议只留一个。
+
+## 实现要点
+
+关键词多了以后仍然不卡，靠这五件事：
+
+1. **不轮询回复 DOM。** `MutationObserver` 只处理新插入 / 内容变化的 `article`，在 `requestAnimationFrame` 里批量处理（后台标签页 rAF 会暂停，所以另挂 300ms 定时器兜底）。滚动加载再多回复也是增量成本。
+2. **普通关键词合并成少量大正则**（每片 ≤ 400 词，一次 `exec` 完成）；自定义正则独立编译并复用。
+
+   实测（500 条回复 × 词库规模，Node 24 / M 系列）：
+
+   | 词库规模 | 逐词正则 | 合并大正则 |
+   | ---: | ---: | ---: |
+   | 200 | 15.7 ms | 1.8 ms |
+   | 1 000 | 71.0 ms | 1.3 ms |
+   | 5 000 | 574.1 ms | 3.9 ms |
+
+3. **判定结果缓存在 `WeakMap` 里**，键是 DOM 元素。X 的虚拟列表回收节点时缓存自动释放，不会像「用 Map/数组存元素引用」那样越滚越占内存。用「正文 + 昵称」签名判断内容有没有变，没变直接跳过。
+4. **视觉效果由 `<html>` 上的一个属性 + 一个 CSS 变量驱动。** 拖动透明度滑块、切换模式时，页面上成百上千条已标记的回复同时更新，零 DOM 遍历、零重新扫描。
+5. **不改写 History API。** Navigation API 在 SPA 路由提交后触发重新判定，兼容性较旧的浏览器由低频 URL 比较兜底。
+
+## 权限
+
+使用 `storage` 保存设置，并且只授权访问 `raw.githubusercontent.com`，用于同步两份词库的 `keywords.txt`（点「同步」时，以及首次安装后自动取一次社区词库）。没有 `tabs`、没有 `cookies`，也不会由扩展向 X 发起额外网络请求。X 页面自身的正常请求不受影响。
+
+## 目录
+
+```
+manifest.json
+CHANGELOG.md    每个版本改了什么
+keywords.txt    每行一条的出厂关键词与正则词库（内置词库）
+src/
+  shared.js     默认配置 + keywords.txt 加载器 + 两个远端词库地址
+                + 归一化与白名单索引（三处运行环境共用同一套规则）
+  content.js    扫描 / 匹配 / 标记
+  content.css   两种效果的样式
+  background.js 首次安装写默认配置、拉一次社区词库 + 图标徽标计数
+  popup.html/css/js
+icons/
+examples/       README 里的效果截图与演示动图
+```

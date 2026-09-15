@@ -799,8 +799,8 @@
   }
 
   /**
-   * SPA 换页。注意：绝不 location.reload()，X 一旦刷新，浏览器后退按钮
-   * 就回不到之前的时间线位置了。这里只是重新判定 + 重扫。
+   * Re-evaluate the current page after an SPA route change. Reloading would
+   * discard the user's timeline position, so route changes only trigger a rescan.
    */
   function onUrlChange() {
     if (location.href === lastUrl) return;
@@ -808,21 +808,14 @@
     refresh();
   }
 
-  function hookHistory() {
-    const wrap = (name) => {
-      const original = history[name];
-      if (typeof original !== "function") return;
-      history[name] = function (...args) {
-        const result = original.apply(this, args);
-        // pushState/replaceState 不触发 popstate，必须自己通知
-        queueMicrotask(onUrlChange);
-        return result;
-      };
-    };
-    wrap("pushState");
-    wrap("replaceState");
+  function watchUrlChanges() {
     window.addEventListener("popstate", onUrlChange);
-    // 兜底：X 偶尔会绕过上面两个入口，1.5s 一次的字符串比较开销可以忽略
+
+    // The Navigation API reports pushState, replaceState, and history traversal
+    // after the visible URL has changed. Older browsers use the timer fallback.
+    if (window.navigation) {
+      window.navigation.addEventListener("currententrychange", onUrlChange);
+    }
     setInterval(onUrlChange, 1500);
   }
 
@@ -889,7 +882,7 @@
     await loadConfig();
     buildMatchers();
     watchConfig();
-    hookHistory();
+    watchUrlChanges();
     hookPop();
 
     active = isStatusPage();
